@@ -3,7 +3,6 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getVeggie } from "../../Redux/VeggieSlice/VeggieSlice";
 // ---- STYLE --- //
-import { CustomContainer } from "../../constants/constant";
 import { Card, Gradient } from "./VeggieStyle";
 // ---- PLUGINS --- //
 import { Splide, SplideSlide } from "@splidejs/react-splide";
@@ -16,7 +15,7 @@ const Veggie = () => {
     dispatch(getVeggie());
   }, [dispatch]);
   return (
-    <CustomContainer>
+    <>
       <h3>Our Vegetarian Picks</h3>
       <Splide
         options={{
@@ -38,7 +37,7 @@ const Veggie = () => {
           </SplideSlide>
         ))}
       </Splide>
-    </CustomContainer>
+    </>
   );
 };
 

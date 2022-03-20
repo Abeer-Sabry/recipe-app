@@ -5,6 +5,7 @@ export const getGeneralRecipes = createAsyncThunk("generalrecipes/getGeneralReci
   try {
     const res = await fetch(
       `https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=9`
+      // `https://api.spoonacular.com/recipes?apiKey=${process.env.REACT_APP_API_KEY}`
     );
     const data = await res.json();
     console.log("api response", data);

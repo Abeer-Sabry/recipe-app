@@ -1,6 +1,10 @@
 import styled from "styled-components";
-export const Wrapper = styled.div`
-  padding-top: 50px;
+
+export const Grid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+  padding-bottom: 50px;
 `;
 export const Card = styled.div`
   overflow: hidden;
@@ -26,6 +30,9 @@ export const Card = styled.div`
     justify-content: center;
     align-items: center;
     color: white;
+  }
+  a {
+    text-decoration: none;
   }
 `;
 

@@ -5,10 +5,9 @@
   box-sizing: border-box;
 }
 body {
-  margin: 0;
   font-family: "Montserrat", sans-serif;
 }
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+h3 {
+  margin-bottom: 15px;
+  font-size: 15px;
 }

@@ -3,10 +3,11 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getGeneralRecipes } from "../../Redux/GeneralSlice/generalSlice";
 // ---- STYLEY  --- //
-import { CustomContainer } from "../../constants/constant";
-import { Card, Gradient } from "./GeneralStyle";
+import { Wrapper, Card, Gradient } from "./GeneralStyle";
 // ---- PLUGINS --- //
 import { Splide, SplideSlide } from "@splidejs/react-splide";
+// ---- REACT-ROUTER-DOM ---- //
+import { Link } from "react-router-dom";
 
 const General = () => {
   // Redux
@@ -16,7 +17,8 @@ const General = () => {
     dispatch(getGeneralRecipes());
   }, [dispatch]);
   return (
-    <CustomContainer>
+    <Wrapper>
+      <h3>Popular Picks</h3>
       <Splide
         options={{
           width: "100%",
@@ -29,15 +31,17 @@ const General = () => {
       >
         {recipes.map(recipe => (
           <SplideSlide key={recipe.id}>
-            <Card>
-              <p>{recipe.title}</p>
-              <img src={recipe.image} alt={recipe.title} />
-              <Gradient />
-            </Card>
+            <Link to={`recipe/${recipe.title}`}>
+              <Card>
+                <p>{recipe.title}</p>
+                <img src={recipe.image} alt={recipe.title} />
+                <Gradient />
+              </Card>
+            </Link>
           </SplideSlide>
         ))}
       </Splide>
-    </CustomContainer>
+    </Wrapper>
   );
 };
 
