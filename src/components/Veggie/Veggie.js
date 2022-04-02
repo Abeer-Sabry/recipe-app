@@ -3,9 +3,12 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getVeggie } from "../../Redux/VeggieSlice/VeggieSlice";
 // ---- STYLE --- //
-import { Card, Gradient } from "./VeggieStyle";
+import { Card, Gradient, Wrapper } from "./VeggieStyle";
 // ---- PLUGINS --- //
 import { Splide, SplideSlide } from "@splidejs/react-splide";
+// ---- REACT-ROUTER-DOM ---- //
+import { Link } from "react-router-dom";
+
 const Veggie = () => {
   // Redux
   const { Veggies } = useSelector(state => state.Veggie);
@@ -15,7 +18,7 @@ const Veggie = () => {
     dispatch(getVeggie());
   }, [dispatch]);
   return (
-    <>
+    <Wrapper>
       <h3>Our Vegetarian Picks</h3>
       <Splide
         options={{
@@ -29,15 +32,17 @@ const Veggie = () => {
       >
         {Veggies.map(Veggie => (
           <SplideSlide key={Veggie.id}>
-            <Card>
-              <p>{Veggie.title}</p>
-              <img src={Veggie.image} alt={Veggie.title} />
-              <Gradient />
-            </Card>
+            <Link to={`recipe/${Veggie.id}`}>
+              <Card>
+                <p>{Veggie.title}</p>
+                <img src={Veggie.image} alt={Veggie.title} />
+                <Gradient />
+              </Card>
+            </Link>
           </SplideSlide>
         ))}
       </Splide>
-    </>
+    </Wrapper>
   );
 };
 

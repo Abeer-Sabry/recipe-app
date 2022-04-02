@@ -24,13 +24,11 @@ const Cuisine = () => {
 
       <Grid>
         {cuisines.map(cuisine => (
-          <Link key={cuisine.id} to={`cuisine/${cuisine.title}`}>
-            <Card>
-              <p>{cuisine.title}</p>
-              <img src={cuisine.image} alt={cuisine.title} />
-              <Gradient />
-            </Card>
-          </Link>
+          <Card key={cuisine.id}>
+            <p>{cuisine.title}</p>
+            <img src={cuisine.image} alt={cuisine.title} />
+            <Gradient />
+          </Card>
         ))}
       </Grid>
     </CustomContainer>

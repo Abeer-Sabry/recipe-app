@@ -1,5 +1,11 @@
 import styled from "styled-components";
 
+export const Wrapper = styled.div`
+  h3 {
+    text-transform: uppercase;
+    font-weight: 800;
+  }
+`;
 export const Card = styled.div`
   overflow: hidden;
   position: relative;

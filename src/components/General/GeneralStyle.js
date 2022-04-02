@@ -1,6 +1,10 @@
 import styled from "styled-components";
 export const Wrapper = styled.div`
-  padding-top: 50px;
+  padding: 50px 0;
+  h3 {
+    text-transform: uppercase;
+    font-weight: 800;
+  }
 `;
 export const Card = styled.div`
   overflow: hidden;

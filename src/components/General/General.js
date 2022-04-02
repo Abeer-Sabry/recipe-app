@@ -31,7 +31,7 @@ const General = () => {
       >
         {recipes.map(recipe => (
           <SplideSlide key={recipe.id}>
-            <Link to={`recipe/${recipe.title}`}>
+            <Link to={`recipe/${recipe.id}`}>
               <Card>
                 <p>{recipe.title}</p>
                 <img src={recipe.image} alt={recipe.title} />

@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
-
+// color //
+import { yellow, orange } from "../../constants/constant";
 export const List = styled.div`
   display: flex;
   justify-content: center;
@@ -9,7 +10,8 @@ export const Nav = styled(NavLink)`
   display: inline-block;
   width: 70px;
   height: 70px;
-  background-color: orange;
+  background: linear-gradient(to top right, ${orange}, ${yellow});
+  /* background-color: orange; */
   border-radius: 50%;
   display: flex;
   flex-direction: column;

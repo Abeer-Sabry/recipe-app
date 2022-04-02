@@ -5,3 +5,7 @@ export const CustomContainer = styled.div`
   margin: 0 auto;
   padding-top: 50px;
 `;
+// ---- colors ---- //
+export const yellow = "#ffdb24";
+export const orange = "#ff7200";
+export const darkOrange = "#e16500";

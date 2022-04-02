@@ -1,6 +1,7 @@
 import "./App.css";
 // COMPONENTS //
 import Categories from "./components/Categories/Categories";
+import Header from "./components/Header/Header";
 import Search from "./components/Search/Search";
 // PAGES//
 import Pages from "./pages/Pages";
@@ -8,6 +9,7 @@ import Pages from "./pages/Pages";
 function App() {
   return (
     <div className="App">
+      <Header />
       <Search />
       <Categories />
       <Pages />
