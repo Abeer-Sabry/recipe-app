@@ -7,7 +7,6 @@ export const getDetails = createAsyncThunk("recipeDetails/getDetails", async (id
       `https://api.spoonacular.com/recipes/${id}/information?apiKey=${process.env.REACT_APP_API_KEY}`
     );
     const data = await res.json();
-    console.log("api response", data);
     return data;
   } catch (error) {
     rejectWithValue(error.message);

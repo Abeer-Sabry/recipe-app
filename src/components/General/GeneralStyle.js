@@ -30,6 +30,10 @@ export const Card = styled.div`
     justify-content: center;
     align-items: center;
     color: white;
+    /* Responsive */
+    @media only screen and (max-width: 1145px) {
+      font-size: 9px;
+    }
   }
 `;
 

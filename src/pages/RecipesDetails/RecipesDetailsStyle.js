@@ -19,10 +19,10 @@ export const Card = styled.div`
     object-fit: cover;
   }
   p {
-    font-size: 14px;
+    font-size: 13px;
     margin-bottom: 20px;
     font-weight: 600;
-    color: black;
+    color: darkslategray;
   }
 `;
 export const Info = styled.div`

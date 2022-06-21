@@ -8,10 +8,11 @@ import { getCuisine } from "../../Redux/CuisineSlice/CuisineSlice";
 import { Grid, Card } from "./CuisineStyle";
 // ---- CONSTANTS ---- //
 import { CustomContainer } from "../../constants/constant";
+import CustomSpinner from "../../components/CustomSpinner/CustomSpinner";
 
 const Cuisine = () => {
   // Redux //
-  const { cuisines } = useSelector(state => state.cuisine);
+  const { cuisines, loading } = useSelector(state => state.cuisine);
   const dispatch = useDispatch();
   // react-router-dom
   const params = useParams();
@@ -20,18 +21,24 @@ const Cuisine = () => {
     dispatch(getCuisine(params.name));
   }, [dispatch, params.name]);
   return (
-    <CustomContainer>
-      <h3>that's our {params.name} picks</h3>
+    <>
+      {loading ? (
+        <CustomSpinner />
+      ) : (
+        <CustomContainer>
+          <h3>that's our {params.name} picks</h3>
 
-      <Grid>
-        {cuisines.map(cuisine => (
-          <Card key={cuisine.id}>
-            <img src={cuisine.image} alt={cuisine.title} />
-            <p>{cuisine.title}</p>
-          </Card>
-        ))}
-      </Grid>
-    </CustomContainer>
+          <Grid>
+            {cuisines.map(cuisine => (
+              <Card key={cuisine.id}>
+                <img src={cuisine.image} alt={cuisine.title} />
+                <p>{cuisine.title}</p>
+              </Card>
+            ))}
+          </Grid>
+        </CustomContainer>
+      )}
+    </>
   );
 };
 

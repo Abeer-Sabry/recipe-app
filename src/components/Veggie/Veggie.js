@@ -28,6 +28,17 @@ const Veggie = () => {
           perPage: 3,
           pagination: false,
           drag: "free",
+          breakpoints: {
+            1120: {
+              perPage: 3,
+            },
+            720: {
+              perPage: 2,
+            },
+            510: {
+              perPage: 1,
+            },
+          },
         }}
       >
         {Veggies.map(Veggie => (
