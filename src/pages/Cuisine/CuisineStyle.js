@@ -8,41 +8,20 @@ export const Grid = styled.div`
 `;
 export const Card = styled.div`
   overflow: hidden;
-  position: relative;
+  margin-bottom: 15px;
+
   img {
     border-radius: 2rem;
     width: 100%;
-    height: 100%;
     object-fit: cover;
+    margin-bottom: 12px;
   }
   p {
-    position: absolute;
-    z-index: 9999;
-    height: 30%;
-    width: 80%;
-    left: 50%;
-    bottom: 10%;
-    transform: translate(-50%, 0%);
-    font-size: 10px;
-    text-align: center;
+    font-size: 11px;
     font-weight: 600;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
+    color: darkslategray;
   }
-  a {
-    text-decoration: none;
-  }
-`;
-
-export const Gradient = styled.div`
-  position: absolute;
-  z-index: 10;
-  height: 100%;
-  width: 100%;
-  top: 0;
-  left: 0;
-  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5));
-  border-radius: 2rem;
 `;

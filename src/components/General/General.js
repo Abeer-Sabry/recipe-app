@@ -10,15 +10,28 @@ import { Splide, SplideSlide } from "@splidejs/react-splide";
 import { Link } from "react-router-dom";
 
 const General = () => {
+  // const responsive = {
+  //   0: {
+  //     items: 1,
+  //   },
+  //   500: {
+  //     items: 2,
+  //   },
+
+  //   1400: {
+  //     items: 3,
+  //   },
+  // };
   // Redux
   const { recipes } = useSelector(state => state.general);
+  console.log("recipes", recipes);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getGeneralRecipes());
   }, [dispatch]);
   return (
     <Wrapper>
-      <h3>Popular Picks</h3>
+      <h3>General Picks</h3>
       <Splide
         options={{
           width: "100%",
@@ -28,6 +41,7 @@ const General = () => {
           pagination: false,
           drag: "free",
         }}
+        // responsive={responsive}
       >
         {recipes.map(recipe => (
           <SplideSlide key={recipe.id}>

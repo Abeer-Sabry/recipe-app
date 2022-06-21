@@ -1,18 +1,20 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
-export const getSearchQuery = createAsyncThunk("searched/getSearchQuery", async (name, thunkAPI) => {
-  const { rejectWithValue } = thunkAPI;
-  try {
-    const res = await fetch(
-      `https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.REACT_APP_API_KEY}&number=12&query=${name}`
-    );
-    const data = await res.json();
-    console.log("api response", data.results);
-    return data.results;
-  } catch (error) {
-    rejectWithValue(error.message);
+export const getSearchQuery = createAsyncThunk(
+  "searched/getSearchQuery",
+  async (name, thunkAPI) => {
+    const { rejectWithValue } = thunkAPI;
+    try {
+      const res = await fetch(
+        `https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.REACT_APP_API_KEY}&number=12&query=${name}`
+      );
+      const data = await res.json();
+      return data.results;
+    } catch (error) {
+      rejectWithValue(error.message);
+    }
   }
-});
+);
 
 const searchSlice = createSlice({
   name: "searched",

@@ -7,7 +7,6 @@ export const getCuisine = createAsyncThunk("cuisine/getCuisine", async (name, th
       `https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.REACT_APP_API_KEY}&number=12&cuisine=${name}`
     );
     const data = await res.json();
-    console.log("api response", data.results);
     return data.results;
   } catch (error) {
     rejectWithValue(error.message);

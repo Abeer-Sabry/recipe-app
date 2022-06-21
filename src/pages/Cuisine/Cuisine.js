@@ -1,11 +1,12 @@
 import React, { useEffect } from "react";
 // ---REACT-ROUTER-DOM --- //
-import { useParams, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 // ---- REDUX ---- //
 import { useDispatch, useSelector } from "react-redux";
 import { getCuisine } from "../../Redux/CuisineSlice/CuisineSlice";
 // ---- STYLE ---- //
-import { Grid, Card, Gradient } from "./CuisineStyle";
+import { Grid, Card } from "./CuisineStyle";
+// ---- CONSTANTS ---- //
 import { CustomContainer } from "../../constants/constant";
 
 const Cuisine = () => {
@@ -25,9 +26,8 @@ const Cuisine = () => {
       <Grid>
         {cuisines.map(cuisine => (
           <Card key={cuisine.id}>
-            <p>{cuisine.title}</p>
             <img src={cuisine.image} alt={cuisine.title} />
-            <Gradient />
+            <p>{cuisine.title}</p>
           </Card>
         ))}
       </Grid>

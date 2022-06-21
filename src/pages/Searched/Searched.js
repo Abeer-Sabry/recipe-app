@@ -5,8 +5,8 @@ import { useParams, Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getSearchQuery } from "../../Redux/SearchSlice/SearchSlice";
 // ---- STYLE ---- //
-import { Grid, Card, Gradient } from "./SearchedStyle";
-import { CustomContainer } from "../../constants/constant";
+import { Grid, Card } from "./SearchedStyle";
+import { CustomContainer, orange } from "../../constants/constant";
 
 const Searched = () => {
   // Redux //
@@ -19,15 +19,18 @@ const Searched = () => {
   }, [dispatch, params.search]);
   return (
     <CustomContainer>
-      <h3>that's our {params.name} picks</h3>
+      <h3>
+        that's our{" "}
+        <span style={{ color: ` ${orange} `, textTransform: "capitalize" }}>{params.search}</span>{" "}
+        picks
+      </h3>
 
       <Grid>
         {Queries.map(Query => (
-          <Link to={`cuisine/${Query.id}`}>
-            <Card key={Query.id}>
-              <p>{Query.title}</p>
+          <Link key={Query.id} to="">
+            <Card>
               <img src={Query.image} alt={Query.title} />
-              <Gradient />
+              <p>{Query.title}</p>
             </Card>
           </Link>
         ))}

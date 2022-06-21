@@ -5,45 +5,39 @@ export const Grid = styled.div`
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 20px;
   padding-bottom: 50px;
+  /* Responsive */
+  @media only screen and (max-width: 891px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @media only screen and (max-width: 681px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media only screen and (max-width: 481px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
 `;
 export const Card = styled.div`
   overflow: hidden;
-  position: relative;
+  margin-bottom: 10px;
   img {
-    position: relative;
     border-radius: 2rem;
     width: 100%;
-    height: 100%;
     object-fit: cover;
+    margin-bottom: 7px;
   }
   p {
-    position: absolute;
-    z-index: 9999;
-    height: 30%;
-    width: 80%;
-    left: 50%;
-    bottom: 10%;
-    transform: translate(-50%, 0%);
     font-size: 10px;
     text-align: center;
     font-weight: 600;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
+    color: darkslategrey;
+    @media only screen and (max-width: 481px) {
+      font-size: 13px;
+    }
   }
   a {
     text-decoration: none;
   }
-`;
-
-export const Gradient = styled.div`
-  position: absolute;
-  z-index: 10;
-  height: 100%;
-  width: 100%;
-  top: 0;
-  left: 0;
-  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5));
-  border-radius: 2rem;
 `;
